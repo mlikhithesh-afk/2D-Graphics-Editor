@@ -45,13 +45,36 @@ void displayCanvas()
 
 int main()
 {
-initCanvas();
+    int choice;
 
-drawRectangle(5, 5, 10, 4);
+    initCanvas();
 
-printf("2D Graphics Editor\n\n");
+    while(1)
+    {
+        printf("\n===== 2D Graphics Editor =====\n");
+        printf("1. Draw Rectangle\n");
+        printf("2. Display Canvas\n");
+        printf("3. Exit\n");
 
-displayCanvas();
+        printf("Enter choice: ");
+        scanf("%d", &choice);
 
-    return 0;
+        switch(choice)
+        {
+            case 1:
+                drawRectangle(5, 5, 10, 4);
+                printf("Rectangle Drawn!\n");
+                break;
+
+            case 2:
+                displayCanvas();
+                break;
+
+            case 3:
+                return 0;
+
+            default:
+                printf("Invalid Choice!\n");
+        }
+    }
 }
