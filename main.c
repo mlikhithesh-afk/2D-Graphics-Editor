@@ -17,7 +17,18 @@ void initCanvas()
         }
     }
 }
+void drawRectangle(int x, int y, int width, int height)
+{
+    int i, j;
 
+    for(i = y; i < y + height; i++)
+    {
+        for(j = x; j < x + width; j++)
+        {
+            canvas[i][j] = '*';
+        }
+    }
+}
 void displayCanvas()
 {
     int i, j;
@@ -34,11 +45,13 @@ void displayCanvas()
 
 int main()
 {
-    initCanvas();
+initCanvas();
 
-    printf("2D Graphics Editor\n\n");
+drawRectangle(5, 5, 10, 4);
 
-    displayCanvas();
+printf("2D Graphics Editor\n\n");
+
+displayCanvas();
 
     return 0;
 }
